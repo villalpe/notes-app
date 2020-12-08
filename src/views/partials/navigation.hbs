@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container">
+      <a class="navbar-brand" href="/">Teatro Recompensas</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      {{#if user.type}}
+          <!--<h6>Hola soy admin!!!</h6>-->
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{user.name}} Theaters
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/stagings">All Stagings</a>
+            <a class="dropdown-item" href="/stagings/add">Add Staging</a>
+            <a class="dropdown-item" href="/theaters">All Teathers</a>
+            <a class="dropdown-item" href="/theaters/add">Add Teather</a>                     
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/users/logout">Logout</a>
+          </div>
+        </li>
+      {{else}}
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{user.name}}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/notes">All Tickets</a>
+            <a class="dropdown-item" href="/notes/add">Add Ticket</a>
+            <a class="dropdown-item" href="/sumas">Revisar Recompensa</a>
+            <a class="dropdown-item" href="/sumas">Mandar Correo</a>                       
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/users/logout">Logout</a>
+          </div>
+        </li>
+      {{/if}}
+      {{#unless user}}
+        <li class="nav-item active">
+          <a class="nav-link" href="/users/signin">SignIn</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/signup">SignUp</a>
+        </li>
+      {{/unless}}
+    </ul>
+  </div>
+</div>
+</nav>

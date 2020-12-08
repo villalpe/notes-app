@@ -1,0 +1,49 @@
+<div class="row">
+    {{#unless theaters}}
+        <div class="card mx-auto">
+            <div class="card-body">
+                <h5>Hi {{user.name}}</h5>
+                <p class="lead">Please select all Theaters</p>
+                <a href="/theaters" class="btn btn-success btn-block">All Theaters!</a>
+            </div>
+        </div>
+    {{/unless}}
+    {{#if theaters}}
+    {{#each theaters}}
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <!--<div class="card-title d-flex justify-content-between align-items-center"></div>-->
+                        <h5 class="card-title d-flex justify-content-between align-items-center">
+                            <strong>{{ name }}</strong> <a href="/theaters/edit/{{id}}"><i class="fas fa-edit"></i></a>
+                        </h5>
+                        <h7 class="card-title d-flex justify-content-between align-items-center">
+                            <strong>Direccion:</strong>{{ address }}
+                        </h7>
+                        <h6 class="card-title d-flex justify-content-between align-items-center">
+                            <strong>Telefono:</strong>{{ phone }} 
+                        </h6>
+                        <h6 class="card-title d-flex justify-content-between align-items-center">
+                            <strong>Puesta en Escena:</strong> {{ staging }}
+                        </h6>
+                        <h6>{{ date }}</h6>
+                        <form action="/theaters/delete/{{id}}?_method=DELETE" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-danger btn-block btn-sm" type="submit">
+                                Delete
+                            </button>
+                        </form>
+                </div>
+            </div>
+        </div>
+        {{else}}
+            <div class="card mx-auto">
+                <div class="card-body">
+                    <h5>Hi {{user.name}}</h5>
+                    <p class="lead">There are not theaters yet!</p>
+                    <a href="/theaters/add" class="btn btn-success btn-block">Create One!</a>
+                </div>
+            </div>    
+    {{/each}}
+    {{/if}}
+</div>

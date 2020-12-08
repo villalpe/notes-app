@@ -1,0 +1,41 @@
+<div class="row">
+    {{#each notes}}
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <!--<div class="card-title d-flex justify-content-between align-items-center"></div>-->
+                        <h4 class="card-title d-flex justify-content-between align-items-center">
+                            {{ snumber }} <a href="/notes/edit/{{id}}"><i class="fas fa-edit"></i></a>
+                        </h4>
+                        <h4 class="card-title d-flex justify-content-between align-items-center">
+                            {{ theater }}
+                        </h4>
+                        <h5 class="card-title d-flex justify-content-between align-items-center"><strong>
+                            {{ title }} 
+                            </strong>
+                        </h5>
+                        <h4 class="card-title d-flex justify-content-between align-items-center">
+                            $ {{ price }}
+                        </h4>
+                        <p>{{ description }}</p>
+                        <h6>{{ date }}</h6>
+                        <form action="/notes/delete/{{id}}?_method=DELETE" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-danger btn-block btn-sm" type="submit">
+                                Delete
+                            </button>
+                        </form>
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <div class="card mx-auto">
+            <div class="card-body">
+                <h4>{{notes}}</h4>
+                <h5>Hi {{user.name}}</h5>
+                <p class="lead">There are not tickets yet!</p>
+                <a href="/notes/add" class="btn btn-success btn-block">Create One!</a>
+            </div>
+        </div>   
+    {{/each}}
+</div>

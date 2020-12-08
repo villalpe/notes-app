@@ -1,0 +1,42 @@
+<!--Para ponerlo en una columna y centrarlo-->
+<!--.col-md-4.mx-auto-->
+<div class="col-md-4 mx-auto">
+<!--.card>.card-body y Tab-->
+    <div class="card">
+        <!--.card-header y Tab-->
+        <div class="card-header">
+            <h1>New Ticket</h1>
+        </div>
+        <div class="card-body">
+            <form action="/notes/new-note" method="POST">
+                <!--.form-group y tab-->
+                <div class="form-group">
+                    <input type="text" name="snumber" class="form-control" placeholder="Serial Number" autofocus>
+                </div>
+                <div class="form-group">
+                    <!--<input type="text" name="theater" class="form-control" placeholder="Theater">-->
+                    <select class="form-control" name="theater" class="form-control" placeholder="Theater">
+                        <option>Foro Shakespeare</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <!--<input type="text" name="title" class="form-control" placeholder="Staging">-->
+                    <select class="form-control" name="title" class="form-control" placeholder="Staging">
+                        <option>Un Violinista en el tejado</option>
+                    </select>                    
+                </div>
+                <div class="form-group">
+                    <input type="number" name="price" class="form-control" placeholder="Price">
+                </div>
+                <div class="form-group">
+                    <textarea name="description" class="form-control" placeholder="Comments"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">
+                        Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

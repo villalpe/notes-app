@@ -1,0 +1,36 @@
+<!--Para ponerlo en una columna y centrarlo-->
+<!--.col-md-4.mx-auto-->
+<div class="col-md-4 mx-auto">
+<!--.card>.card-body y Tab-->
+    <div class="card">
+        <!--.card-header y Tab-->
+        <div class="card-header">
+            <h1>New Theater</h1>
+        </div>
+        <div class="card-body">
+            <form action="/theaters/new-theater" method="POST">
+                <!--.form-group y tab-->
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control" placeholder="Name" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="address" class="form-control" placeholder="Address">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="phone" class="form-control" placeholder="Phone">
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="staging" class="form-control" placeholder="Staging">
+                        <option>La Palabra Canta</option>
+                        <option>El Violinista en el tejado</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">
+                        Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+
+<div class="jumbotron mt-4">
+    {{#if sumaf}}
+        <h5 class="display-4">Recompensas Teatros para: </h5>
+        <h5>{{user.name}}</h5>
+        <p class="lead">Usted ha comprado en boletos la cantidad de $<strong>{{sumaf}}</strong> pesos</p>
+        <hr class="my-4">
+        <h4>Ha usted le corresponden, por la compra de sus boletos, <strong>20 puntos</strong></h4>
+        <h5><strong>50 puntos, boletos gratis</strong></h5>
+    {{else}}
+        <h4>Usted no ha acumulado puntos aun!</h4>
+    {{/if}}  
+</div>
